@@ -1,4 +1,4 @@
-package com.ddw.demo.config;
+package com.ddw.demo.aop.logging;
 
 import com.ddw.demo.aop.logging.LoggingAspect;
 import org.springframework.context.annotation.Bean;
