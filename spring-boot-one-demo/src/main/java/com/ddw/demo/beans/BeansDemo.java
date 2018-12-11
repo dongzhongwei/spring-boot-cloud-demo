@@ -15,7 +15,8 @@ public class BeansDemo {
 
     public static void main(String[] args) throws Exception {
 
-        User user = new User(new Name());
+//        User user = User.builder().build();
+        User user = new User();
 
         //commons-beanutils操作
 //        PropertyUtils.setProperty(user,"id",1);

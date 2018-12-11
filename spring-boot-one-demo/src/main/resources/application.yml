@@ -1,14 +1,88 @@
 server:
   port: 8080
 spring:
-  redis:
-    cluster:
-      nodes: 192.168.1.222:7000,192.168.1.222:7001,192.168.1.222:7002,192.168.1.223:7003,192.168.1.223:7004,192.168.1.223:7005,192.168.1.224:7006,192.168.1.224:7007,192.168.1.224:7008
+  application:
+    name: spring-boot-one-demo
+#  redis:
+#    cluster:
+#      nodes: 192.168.1.222:7000,192.168.1.222:7001,192.168.1.222:7002,192.168.1.223:7003,192.168.1.223:7004,192.168.1.223:7005,192.168.1.224:7006,192.168.1.224:7007,192.168.1.224:7008
+#    host:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/zlb-db-01?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password:
+    hikari:
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+  aop:
+    proxy-target-class: true
+  jpa:
+    hibernate:
+      ddl-auto: update
 
-user:
-  id: 1
-  name:
-    first_name: zhang
-    lastName: san
+#user:
+#  id: 1
+#  name:
+#    first_name: zhang
+#    lastName: san
 
-
+demo:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      - driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/zlb-db-01?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: root
+        connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+        filter:
+          config:
+           enabled: true
+      - driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/zlb-db-02?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: root
+        connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+        filter:
+          config:
+           enabled: true
+      - driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/zlb-db-03?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: root
+        connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+        filter:
+          config:
+           enabled: true
+    hikari:
+      - driver-class-name: com.mysql.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/zlb-db-01?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: root
+        data-source-properties:
+          cachePrepStmts: true
+          prepStmtCacheSize: 250
+          prepStmtCacheSqlLimit: 2048
+          useServerPrepStmts: true
+      - driver-class-name: com.mysql.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/zlb-db-02?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: root
+        data-source-properties:
+          cachePrepStmts: true
+          prepStmtCacheSize: 500
+          prepStmtCacheSqlLimit: 4056
+          useServerPrepStmts: true
+      - driver-class-name: com.mysql.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/zlb-db-03?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: root
+        data-source-properties:
+          cachePrepStmts: true
+          prepStmtCacheSize: 500
+          prepStmtCacheSqlLimit: 4056
+          useServerPrepStmts: true

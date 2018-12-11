@@ -12,7 +12,8 @@
 
     <bean id="user" class="com.ddw.demo.domain.User">
         <property name="id" value="1"/>
-        <property name="age" value="2"/>
+        <!--<property name="age" value="2"/>-->
+
         <property name="birthday" value="2017-11-25"/>
     </bean>
 

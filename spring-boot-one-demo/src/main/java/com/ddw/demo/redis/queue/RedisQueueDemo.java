@@ -9,7 +9,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.concurrent.CountDownLatch;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class RedisQueueDemo {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RedisQueueDemo.class);

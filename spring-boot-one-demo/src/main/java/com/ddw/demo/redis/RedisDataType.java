@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class RedisDataType {
 
     public static void main(String[] args) throws Exception {
@@ -52,6 +52,9 @@ public class RedisDataType {
         String listKey = "list:key";
         //rpush
         listOperations.rightPush(listKey, "rightList1");
+
+
+
         listOperations.rightPushAll(listKey, "rightList2", "rightList3");
         listOperations.rightPushAll(listKey, Arrays.asList("rightList4", "rightList5"));
         //lpush

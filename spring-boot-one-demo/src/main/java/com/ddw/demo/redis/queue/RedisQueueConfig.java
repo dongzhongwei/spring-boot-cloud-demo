@@ -10,7 +10,7 @@ import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 
 import java.util.concurrent.CountDownLatch;
 
-@Configuration
+//@Configuration
 public class RedisQueueConfig {
 
     @Bean
