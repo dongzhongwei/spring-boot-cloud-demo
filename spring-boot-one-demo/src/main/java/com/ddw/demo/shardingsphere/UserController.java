@@ -31,7 +31,7 @@ public class UserController {
                 .field("age", "age1")
                 .byDefault()
                 .register();
-        return  userRepository.findOne(id);
+        return  null;
     }
 
 //    @GetMapping

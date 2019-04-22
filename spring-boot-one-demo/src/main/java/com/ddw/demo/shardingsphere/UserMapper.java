@@ -9,6 +9,6 @@ public interface UserMapper {
  
     UserMapper INSTANCE = Mappers.getMapper( UserMapper.class );
  
-    @Mapping(source ="age", target = "age1")
+    @Mapping(source ="age", target = "age")
     UserDTO carToCarDto(User user);
 }

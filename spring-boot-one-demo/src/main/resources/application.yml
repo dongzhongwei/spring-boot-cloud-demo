@@ -1,8 +1,23 @@
 server:
   port: 8080
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain,application/javascript,text/css
 spring:
   application:
     name: spring-boot-one-demo
+  mail:
+    host: smtp.ym.163.com
+#    port: 465
+    username: system@lanjinghr.com
+    password: Uav29iieeYqZptF
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+            port: 465
 #  redis:
 #    cluster:
 #      nodes: 192.168.1.222:7000,192.168.1.222:7001,192.168.1.222:7002,192.168.1.223:7003,192.168.1.223:7004,192.168.1.223:7005,192.168.1.224:7006,192.168.1.224:7007,192.168.1.224:7008
@@ -29,7 +44,6 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-
 #user:
 #  id: 1
 #  name:

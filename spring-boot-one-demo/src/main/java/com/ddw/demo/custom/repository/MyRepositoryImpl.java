@@ -230,14 +230,14 @@ public class MyRepositoryImpl<T, ID extends Serializable>
         return entityManager.createNativeQuery(sql.substring(0, sql.length() - 1)).executeUpdate();
     }
 
-    @Override
-    public List<T> findAll(Iterable<ID> ids) {
-        if (ids == null || !ids.iterator().hasNext()) {
-            return Collections.emptyList();
-        }
-        String tableName = getDomainClass().getAnnotation(Table.class).name();
-        String idName = entityInformation.getIdAttribute().getName();
-        String sql = "select * from "+ tableName + " where "+idName+" in (?1)";
-        return entityManager.createNativeQuery(sql, getDomainClass()).setParameter(1,ids).getResultList();
-    }
+//    @Override
+//    public List<T> findAll(Iterable<ID> ids) {
+//        if (ids == null || !ids.iterator().hasNext()) {
+//            return Collections.emptyList();
+//        }
+//        String tableName = getDomainClass().getAnnotation(Table.class).name();
+//        String idName = entityInformation.getIdAttribute().getName();
+//        String sql = "select * from "+ tableName + " where "+idName+" in (?1)";
+//        return entityManager.createNativeQuery(sql, getDomainClass()).setParameter(1,ids).getResultList();
+//    }
 }

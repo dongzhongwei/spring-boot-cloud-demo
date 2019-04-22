@@ -1,5 +1,6 @@
 package com.ddw.demo.rest;
 
+import com.ddw.demo.domain.Color;
 import com.ddw.demo.jpa.MyUserRepository;
 import com.ddw.demo.service.HelloWorldService;
 import com.ddw.demo.shardingsphere.User;
@@ -31,16 +32,17 @@ public class DemoController {
     }
 
     @GetMapping("helloWorld")
-    public String helloWorld(HttpServletRequest request, @RequestParam String name) throws Exception {
+    public String helloWorld(HttpServletRequest request, @RequestParam String name, @RequestParam Color color) throws Exception {
         Object obj = new Object();
         Thread.sleep(200);
         helloWorldService.cache();
-        return name + "Hello,World";
+
+        return name + "Hello,World,this is code:"+ color;
     }
 
     @PostMapping("/myrepository/users")
     public String createUsers(@RequestBody List<User> users){
-        myUserRepository.save(users);
+//        myUserRepository.save(users);
         return "OK";
     }
 
@@ -63,7 +65,7 @@ public class DemoController {
     @GetMapping("/myrepository/users")
     public Iterable<User> getUsers(@RequestParam String ids){
         List<Integer> idList = Lists.transform(Arrays.asList(ids.split(",")), input -> Integer.parseInt(input));
-        return myUserRepository.findAll(idList);
+        return null;
     }
 
     @DeleteMapping("/myrepository/users")

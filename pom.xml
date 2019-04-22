@@ -3,20 +3,23 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.zhanjob</groupId>
-	<artifactId>zjob-parent</artifactId>
+	<groupId>com.ddw</groupId>
+	<artifactId>demo-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>zjob</name>
+	<name>ddw-demo</name>
 	<description>The parent project of zjob</description>
 
 	<modules>
 		<module>spring-boot-one-demo</module>
 		<module>eshop-inventory</module>
-		<module>rpc-server</module>
-		<module>rpc-client</module>
+		<module>concurrency</module>
+		<module>spring5-demo</module>
+        <module>mybatis-demo</module>
+        <module>socket</module>
+        <module>data-structure</module>
+		<module>spring-boot-two</module>
 	</modules>
-
 
 </project>

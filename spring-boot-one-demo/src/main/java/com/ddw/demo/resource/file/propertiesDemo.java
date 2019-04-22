@@ -13,5 +13,6 @@ public class propertiesDemo {
         properties.load(inputStream);
         final String appName = properties.getProperty("spring.application.name");
         System.out.println(appName);
+
     }
 }

@@ -101,7 +101,7 @@ public class NIOServerHandler implements Runnable {
         if (key.isValid()) {
             //处理新接入的请求消息
             if (key.isAcceptable()) {
-                ServerSocketChannel serverSocketChannel = ServerSocketChannel.class.cast(key.channel());
+                ServerSocketChannel serverSocketChannel = (ServerSocketChannel)key.channel();
                 //通过ServerSocketChannel的accept创建SocketChannel实例
                 //完成此操作意味着完成TCP三次握手，TCP物理链路真是建立
                 final SocketChannel socketChannel = serverSocketChannel.accept();

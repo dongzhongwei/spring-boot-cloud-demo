@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace属性是名称空间，必须唯一 -->
+<mapper namespace="com.ddw.demo.repository.UserMapper">
+
+    <!-- resultMap标签:映射实体与表
+         type属性：表示实体全路径名
+         id属性：为实体与表的映射取一个任意的唯一的名字
+    -->
+    <resultMap type="com.ddw.demo.domain.User" id="userMap">
+        <!-- id标签:映射主键属性
+             result标签：映射非主键属性
+             property属性:实体的属性名
+             column属性：表的字段名
+        -->
+        <id property="id" column="u_l_id"/>
+        <result property="telephone" column="telephone"/>
+    </resultMap>
+
+    <select id="findById" parameterType="long" resultMap="userMap">
+        SELECT * FROM user WHERE u_l_id = #{id};
+    </select>
+
+</mapper>
